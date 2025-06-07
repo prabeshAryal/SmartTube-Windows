@@ -70,3 +70,76 @@ tmp/
 fabric.properties
 *BAK.java
 hs_err_pid*.log
+
+# Java desktop/Gradle build artifacts
+*.log
+*.war
+*.ear
+*.jar
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Gradle specific
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.ipr
+*.iml
+out/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Mac system files
+*.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux system files
+*~
+
+# Logs
+logs/
+*.log
+
+# Test reports
+test-output/
+test-results/
+reports/
+
+# Local environment files
+.env
+.env.*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Others
+*.class
+*.settings/
+*.classpath
+*.project
