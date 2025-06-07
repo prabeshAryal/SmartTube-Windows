@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label styleClass="content-title" text="Library" />
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="10.0">
+               <children>
+                  <Label text="Your library content will appear here" />
+                  <Label text="• Saved playlists" />
+                  <Label text="• Liked videos" />
+                  <Label text="• Watch later" />
+                  <Label text="• Downloaded content" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

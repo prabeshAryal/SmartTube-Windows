@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label styleClass="content-title" text="Settings" />
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="15.0">
+               <children>
+                  <Label text="Application Settings" styleClass="section-header" />
+                  <VBox spacing="5.0">
+                     <children>
+                        <CheckBox text="Enable dark theme" selected="true" />
+                        <CheckBox text="Auto-play videos" />
+                        <CheckBox text="Show video descriptions" selected="true" />
+                        <CheckBox text="Enable notifications" />
+                     </children>
+                  </VBox>
+                  
+                  <Label text="Video Quality" styleClass="section-header" />
+                  <VBox spacing="5.0">
+                     <children>
+                        <RadioButton text="Auto (recommended)" selected="true" />
+                        <RadioButton text="1080p" />
+                        <RadioButton text="720p" />
+                        <RadioButton text="480p" />
+                     </children>
+                  </VBox>
+                  
+                  <Label text="Account" styleClass="section-header" />
+                  <VBox spacing="5.0">
+                     <children>
+                        <Button text="Sign In" />
+                        <Button text="Manage Account" />
+                        <Button text="Clear Cache" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

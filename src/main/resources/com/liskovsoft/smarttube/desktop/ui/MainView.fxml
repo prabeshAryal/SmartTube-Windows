@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liskovsoft.smarttube.desktop.ui.MainViewController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header-box" style="-fx-padding: 5;">
+            <Button text="☰" fx:id="menuButton"/>
+            <Label text="SmartTube Desktop" style="-fx-font-weight: bold;"/>
+            <TextField HBox.hgrow="ALWAYS" promptText="Search" fx:id="searchField"/>
+            <Button text="🔍" fx:id="searchButton"/>
+            <Button text="👤" fx:id="profileButton"/> <!-- Placeholder for profile -->
+        </HBox>
+    </top>
+    <left>
+        <!-- The fx:id here is for the VBox root of SidebarView.fxml, which will be injected into MainViewController -->
+        <!-- The controller for SidebarView.fxml will be injected as sidebarViewController (fx:id + "Controller") -->
+        <fx:include source="SidebarView.fxml" fx:id="sidebarView"/>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <!-- Content views will be loaded here -->
+            <Label text="Welcome to SmartTube Desktop!"/>
+        </StackPane>
+    </center>
+</BorderPane>

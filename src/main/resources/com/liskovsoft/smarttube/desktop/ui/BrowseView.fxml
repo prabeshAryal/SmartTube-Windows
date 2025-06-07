@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.liskovsoft.smarttube.desktop.ui.BrowseViewController"
+            styleClass="root">
+   
+   <!-- Header Section -->
+   <top>
+      <HBox styleClass="header-box" spacing="10.0" alignment="CENTER_LEFT">
+         <children>
+            <!-- Menu/Hamburger Button -->
+            <Button fx:id="menuButton" text="☰" styleClass="icon-button" />
+            
+            <!-- App Logo/Title -->
+            <Label text="SmartTube" styleClass="app-title" />
+            
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <!-- Search Box -->
+            <HBox spacing="5.0" alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchField" promptText="Search YouTube..." prefWidth="300.0" />
+                  <Button fx:id="searchButton" text="🔍" styleClass="icon-button" onAction="#onSearch" />
+               </children>
+            </HBox>
+            
+            <!-- User Profile Button -->
+            <Button fx:id="profileButton" text="👤" styleClass="icon-button" />
+         </children>
+      </HBox>
+   </top>
+
+   <!-- Sidebar Navigation -->
+   <left>
+      <VBox styleClass="sidebar" spacing="5.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="homeButton" text="🏠 Home" styleClass="sidebar-button" onAction="#onHomeSelected" />
+            <Button fx:id="trendingButton" text="📈 Trending" styleClass="sidebar-button" onAction="#onTrendingSelected" />
+            <Button fx:id="subscriptionsButton" text="📺 Subscriptions" styleClass="sidebar-button" onAction="#onSubscriptionsSelected" />
+            
+            <Separator />
+            
+            <Button fx:id="libraryButton" text="📚 Library" styleClass="sidebar-button" onAction="#onLibrarySelected" />
+            <Button fx:id="historyButton" text="🕒 History" styleClass="sidebar-button" onAction="#onHistorySelected" />
+            <Button fx:id="watchLaterButton" text="⏰ Watch Later" styleClass="sidebar-button" onAction="#onWatchLaterSelected" />
+            <Button fx:id="likedVideosButton" text="👍 Liked Videos" styleClass="sidebar-button" onAction="#onLikedVideosSelected" />
+            
+            <Separator />
+            
+            <Button fx:id="settingsButton" text="⚙️ Settings" styleClass="sidebar-button" onAction="#onSettingsSelected" />
+         </children>
+      </VBox>
+   </left>
+
+   <!-- Main Content Area -->
+   <center>
+      <StackPane fx:id="contentArea" styleClass="content-area">
+         <children>
+            <!-- This will be dynamically populated with video grids -->
+            <ScrollPane fx:id="mainScrollPane" fitToWidth="true" fitToHeight="true">
+               <content>
+                  <VBox fx:id="videoSectionsContainer" spacing="20.0" styleClass="video-sections-container">
+                     <!-- Dynamic video sections will be added here -->
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </StackPane>
+   </center>
+
+   <!-- Status Bar (optional) -->
+   <bottom>
+      <HBox styleClass="status-bar" spacing="10.0" alignment="CENTER_LEFT">
+         <children>
+            <Label fx:id="statusLabel" text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="connectionStatus" text="Connected" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

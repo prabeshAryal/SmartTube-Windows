@@ -7,8 +7,8 @@ plugins {
 
 group = 'com.liskovsoft.smarttube'
 version = '1.0.0'
-sourceCompatibility = '17'
-targetCompatibility = '17'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 repositories {
     mavenCentral()
@@ -17,16 +17,16 @@ repositories {
 }
 
 javafx {
-    version = '19'
+    version = '17'
     modules = ['javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
 }
 
 dependencies {
     // JavaFX
-    implementation 'org.openjfx:javafx-controls:19'
-    implementation 'org.openjfx:javafx-fxml:19'
-    implementation 'org.openjfx:javafx-media:19'
-    implementation 'org.openjfx:javafx-web:19'
+    implementation 'org.openjfx:javafx-controls:17'
+    implementation 'org.openjfx:javafx-fxml:17'
+    implementation 'org.openjfx:javafx-media:17'
+    implementation 'org.openjfx:javafx-web:17'
     
     // Media libraries
     implementation 'uk.co.caprica:vlcj:4.8.2'

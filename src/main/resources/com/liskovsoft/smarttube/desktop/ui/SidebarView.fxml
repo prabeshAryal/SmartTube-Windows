@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.liskovsoft.smarttube.desktop.ui.SidebarController" 
+      spacing="10" styleClass="sidebar" style="-fx-padding: 10;">
+    <children>
+        <Button text="Home" fx:id="homeButton" prefWidth="180" styleClass="sidebar-button"/>
+        <Button text="Trending" fx:id="trendingButton" prefWidth="180" styleClass="sidebar-button"/>
+        <Button text="Subscriptions" fx:id="subscriptionsButton" prefWidth="180" styleClass="sidebar-button"/>
+        <Button text="History" fx:id="historyButton" prefWidth="180" styleClass="sidebar-button"/>
+        <Button text="Library" fx:id="libraryButton" prefWidth="180" styleClass="sidebar-button"/>
+        <Button text="Settings" fx:id="settingsButton" prefWidth="180" styleClass="sidebar-button"/>
+    </children>
+</VBox>

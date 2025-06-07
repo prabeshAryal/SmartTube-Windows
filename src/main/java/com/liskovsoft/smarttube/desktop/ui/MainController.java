@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 /**
  * Main controller for the SmartTube Desktop application UI
@@ -113,9 +114,8 @@ public class MainController implements Initializable {
         // Setup progress slider
         progressSlider.setMin(0);
         progressSlider.setValue(0);
-        
-        // Initial button states
-        playPauseButton.setText("▶");
+          // Initial button states
+        playPauseButton.setText("Play");
         muteButton.setText("🔊");
         
         // Hide controls initially
@@ -251,24 +251,21 @@ public class MainController implements Initializable {
         alert.showAndWait();
     }
     
-    // Player Controls
-    @FXML
+    // Player Controls    @FXML
     private void playPause() {
         if (videoPlayer.isPlaying()) {
             videoPlayer.pause();
-            playPauseButton.setText("▶");
-            updateStatus("Paused");
-        } else {
+            playPauseButton.setText("Play");
+            updateStatus("Paused");        } else {
             videoPlayer.play();
-            playPauseButton.setText("⏸");
+            playPauseButton.setText("Pause");
             updateStatus("Playing");
         }
     }
     
     @FXML
-    private void stop() {
-        videoPlayer.stop();
-        playPauseButton.setText("▶");
+    private void stop() {        videoPlayer.stop();
+        playPauseButton.setText("Play");
         progressSlider.setValue(0);
         currentTimeLabel.setText("00:00");
         updateStatus("Stopped");
@@ -412,10 +409,9 @@ public class MainController implements Initializable {
                     String quality = qualityComboBox.getValue();
                     VideoFormat format = selectBestFormat(detailedVideo.getFormats(), quality);
                     
-                    if (format != null) {
-                        videoPlayer.loadVideo(format.getUrl());
+                    if (format != null) {                        videoPlayer.loadVideo(format.getUrl());
                         videoPlayer.play();
-                        playPauseButton.setText("⏸");
+                        playPauseButton.setText("Pause");
                         updateStatus("Playing: " + video.getTitle());
                         
                         // Add to playlist if not already there
@@ -467,11 +463,10 @@ public class MainController implements Initializable {
     private VideoFormat selectBestFormat(List<VideoFormat> formats, String preferredQuality) {
         if (formats == null || formats.isEmpty()) {
             return null;
-        }
-          // Filter formats that have both video and audio
+        }        // Filter formats that have both video and audio
         List<VideoFormat> videoAudioFormats = formats.stream()
             .filter(f -> f.hasVideo() && f.hasAudio())
-            .toList();
+            .collect(Collectors.toList());
         
         if (!videoAudioFormats.isEmpty()) {
             if ("Auto".equals(preferredQuality)) {
